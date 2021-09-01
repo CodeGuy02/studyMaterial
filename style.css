@@ -1,5 +1,59 @@
 body {
+	margin-left:auto;
+	margin-right:auto;
+	width:80%;
 	background-color: powderblue;
+}
+
+h1 {
+	text-align: center;
+	color:azure;
+	text-shadow: 1px 1px 3px black;
+}
+
+h2 {
+	text-align:center;
+	color:azure;
+	text-shadow: 1px 1px 3px black;
+	font-family:monospace;
+}
+
+li {
+	font-family: monospace;
+	transition:100ms;
+}
+
+li:hover {
+	transform:scale(1.05);
+}
+
+a {
+	transition:100ms;
+}
+
+a:hover {
+	transform:scale(1.3);
+	color:tomato;
+}
+
+#code {
+	text-align: left;
+	border: 1px solid black;
+	overflow-x:scroll;
+}
+
+ion-icon {
+	transform:scale(1.4);
+	color:darkblue;
+}
+
+#backToMain {
+	transition: 100ms;
+}
+
+#backToMain:hover {
+	color:blueviolet;
+	transform:scale(1.1);
 }
 
 #output {
