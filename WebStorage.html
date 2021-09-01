@@ -1,0 +1,46 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+
+<body>
+
+    <div id="output">
+
+    </div>
+
+    <script>
+        var data = {
+            key1 : "string",
+            key2 : true,
+            key3 : [1,2,3]
+        };
+
+        localStorage.setItem("myData", JSON.stringify(data));
+
+        var dataRead = JSON.parse(localStorage.getItem("myData"));
+
+        var numPairs = localStorage.length;
+        var lengthText = numPairs.toString();   // parseInt in reverse
+
+        for (var i=0, key, value; i<localStorage.length; i++) {
+
+            key = localStorage.key(i);
+            value = localStorage.getItem(key);
+            console.log(key, value);
+            document.getElementById("output").innerHTML = "Key: " + key + " value: " + value;
+
+        }
+
+       //document.getElementById("output").innerHTML = dataRead + " " + lengthText;
+        console.log(dataRead);
+
+
+    </script>
+
+
+</body>
+
+</html>
