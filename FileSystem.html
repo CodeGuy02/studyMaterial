@@ -1,0 +1,58 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+
+<body>
+    <h1> File System  </h1>
+    <h2> Read, Write, Delete files and folders</h2>
+
+    <p> Synchronous and Asynchronous file reading: </p>
+        <li> fs.readFile - Asynchronous </li>
+        <li> fs.readFileSync - Synchronous </li>
+    
+
+    <div class="code"> 
+        <pre>
+        <code>
+            // Synchronously reading files:
+            function readFile(filename1) {
+                // Reading the file Synchronously - Blocking rest of execution
+                var data = fs.readFileSync(filename1);
+                console.log("\n\nThe content of the file is \n\n"+data);
+             }
+            // ---------------------------------
+            // Asynchronous file reading:
+            function readFile1(filename1) {
+                fs.readFile(filename1, (err, data) => {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log("\n\nThe content of the file is \n\n"+data);
+                        console.log("Completed reading file1");
+                    }
+                });
+            }
+        </code>
+        </pre>
+    </div>
+
+    <br>
+
+    <div class="output">
+
+    </div>
+
+    <script>
+        
+
+
+    </script>
+
+    <br>
+    <a href="./index.html" id="backToMain"> Main Menu </a>
+</body>
+
+</html>
