@@ -1,0 +1,59 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+
+<body>
+    <h1> Promises - Javascript </h1>
+    <h2> Example </h2>
+
+    <p> Promises </p>
+        <li> resolve, reject </li>
+                
+    <div class="code"> 
+        <pre>
+        <code>
+            var prompt = require('prompt-sync')();
+            var fs = require('fs');
+
+            const methCall = new Promise((resolve,reject)=>{
+                var filename = prompt('What is the name of the file ?');
+                try {
+                    const data = fs.readFileSync(filename, {encoding:'utf8', flag:'r'}); 
+                resolve(data);
+                } catch(err) {
+                    reject(err);
+                }
+            });
+
+            console.log(methCall);
+
+            methCall.then(
+                (data) => console.log(data),
+                (err) => console.log("Error reading file") 
+            );
+
+
+        </code>
+        </pre>
+    </div>
+
+    <br>
+
+    <div class="output">
+
+    </div>
+
+    <script>
+        
+
+
+    </script>
+
+    <br>
+    <a href="./index.html" id="backToMain"> Main Menu </a>
+</body>
+
+</html>
