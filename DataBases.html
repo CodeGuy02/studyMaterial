@@ -1,0 +1,105 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+
+<body>
+    <h1> Databases - Javascript </h1>
+    <h2> Multiple database types: </h2>
+
+    <p>As early as possible in your application, require and configure dotenv.</p>
+    <div class="code"> 
+        <pre>
+        <code>
+            require('dotenv').config()
+        </code>
+        </pre>
+    </div>
+    <p> Create a .env file in the root directory of your project. Add environment-specific variables on new lines in the form of NAME=VALUE. For example:
+    </p>       
+
+    <div class="code"> 
+        <pre>
+        <code>
+            DB_HOST=localhost
+            DB_USER=root
+            DB_PASS=s1mpl3
+        </code>
+        </pre>
+    </div>
+
+    <p> process.env now has the keys and values you defined in your .env file.</p>
+    <div class="code"> 
+        <pre>
+        <code>
+            const db = require('db')
+            db.connect({
+              host: process.env.DB_HOST,
+              username: process.env.DB_USER,
+              password: process.env.DB_PASS
+            })
+             
+        </code>
+        </pre>
+    </div>
+    <br>
+
+    <p> Dotenv is a zero-dependency module that loads environment variables
+        from a .env file into process.env. Storing configuration in the environment
+        separate from code is based on The Twelve-Factor App methodology.</p>
+
+        
+    <div class="code"> 
+        <pre>
+            <code>
+            const db = require('db')
+            db.connect({
+              host: process.env.DB_HOST,
+              username: process.env.DB_USER,
+              password: process.env.DB_PASS
+            })
+             
+            </code>
+        </pre>
+    </div>
+    
+    <p>
+        MySQL database: 
+    </p>
+
+    <div class="code">
+        <pre>
+            <code>
+            var mysql = require('mysql');
+
+            var con = mysql.createConnection({
+                host: "localhost",
+                user: "yourusername",
+                password: "yourpassword"
+            });
+
+            con.connect(function(err) {
+                if (err) throw err;
+                console.log("Connected!");
+            });
+            </code>
+        </pre>
+    </div>
+
+    <div class="output">
+
+    </div>
+
+    <script>
+        
+
+
+    </script>
+
+    <br>
+    <a href="./index.html" id="backToMain"> Main Menu </a>
+</body>
+
+</html>
